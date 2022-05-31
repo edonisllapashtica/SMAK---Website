@@ -13,4 +13,10 @@ toggler.addEventListener("click", function () {
 // }
 
 let date = new Date().getFullYear();
-document.getElementById('date-with-js').innerText = date;
+document.getElementById("date-with-js").innerText = date;
+
+// Tidio live chat
+<script
+  src="//code.tidio.co/6gnuucjbkdg9cefe7nphuhkrcz4dyazo.js"
+  async
+></script>;
