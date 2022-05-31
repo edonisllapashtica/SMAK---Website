@@ -63,10 +63,6 @@ h2 {
   font-size: 1.4rem;
 }
 
-h3 {
-  font-size: 1.1rem;
-}
-
 h2::before {
   content: attr(data-title);
   color: var(--grey);
@@ -79,6 +75,10 @@ h2::before {
   letter-spacing: 2px;
 }
 
+h3 {
+  font-size: 1.1rem;
+}
+
 p {
   line-height: 1.5;
   text-align: center;
@@ -88,6 +88,7 @@ p {
 img {
   display: block;
   max-width: 100%;
+  width: 100%;
   display: block;
   object-fit: cover;
 }
@@ -127,6 +128,26 @@ section:nth-child(2n) p {
   font-weight: bold;
   cursor: pointer;
   margin-top: 0.8em;
+  position: relative;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  background-color: var(--dark-green);
+  transform: scaleX(0);
+  z-index: -1;
+  transition: transform var(--transition-duration, 350ms) ease;
+}
+
+.btn:hover::after,
+.btn:focus::after {
+  transform: scale(1);
 }
 
 .line-break {
@@ -525,6 +546,14 @@ div[class$="item"] > p {
   color: var(--grey);
 }
 
+.team__header {
+  height: 220px;
+}
+
+.team__header > img {
+  height: 100%;
+}
+
 .team__body {
   padding: 1.4em 1em;
 }
@@ -539,40 +568,6 @@ div[class$="item"] > p {
   font-size: 0.8rem;
   letter-spacing: 2px;
 }
-
-/* Quote */
-/* .quote {
-  width: 100%;
-  background-color: var(--black);
-  color: var(--white);
-  padding: 2em 1em;
-  position: absolute;
-  left: 0;
-  right: 0;
-  opacity: 0;
-}
-
-.quote > h3 {
-  color: var(--yellow);
-}
-
-.quote i.fa-brands {
-  border: 1px solid var(--white);
-  padding: 0.6em 0.8em;
-  margin-right: .4em;
-  margin-top: 1em;
-  width: 42px;
-  text-align: center;
-}
-
-.quote__close {
-  position: absolute;
-  top: 12px;
-  right: 15px;
-
-  font-size: 1.5rem;
-  cursor: pointer;
-} */
 
 /* Skills section */
 .skills__box {
@@ -695,6 +690,11 @@ div[class$="item"] > p {
   gap: 0.8em;
 }
 
+.message > form > div:first-child {
+  display: grid;
+  gap: 0.8em;
+}
+
 .message > form input,
 .message > form textarea {
   display: inline-block;
@@ -756,4 +756,321 @@ div[class$="item"] > p {
 .scroll-up:focus {
   transform: translateY(-5px);
   opacity: 1;
+}
+
+/* Responsive for tablet */
+@media (min-width: 768px) {
+  /* Variables */
+  :root {
+    --section-padding: 8em 4em;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h2::before {
+    font-size: 0.9rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Home section */
+  .home {
+    --section-padding: 10em 0em;
+  }
+
+  .home__content {
+    padding: 2em 1em;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  h2::before {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  /* Services section */
+  .services__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* How section */
+  .how__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Gallery section */
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Numbers section */
+  .numbers__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* About section */
+  .about__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Team section */
+  .team__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Skills section */
+  .skills__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Skills section */
+  .clients__box {
+    justify-items: center;
+  }
+
+  .client__item > img {
+    width: 80%;
+  }
+
+  /* Contact setion */
+  .contact__box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive for Desktop */
+@media (min-width: 1024px) {
+  /* Variables */
+  :root {
+    --section-padding: 10em 6em;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 0.9em 3em;
+    margin-top: 1.4em;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 0.6em 1em;
+    display: grid;
+    align-items: center;
+    justify-items: space-between;
+  }
+
+  /* Navbar toggler */
+  .navbar__toggler {
+    display: none;
+  }
+
+  /* Navbar menu */
+  .navbar__menu {
+    all: unset;
+    list-style-type: none;
+    display: flex;
+    justify-self: end;
+  }
+
+  .navbar__item {
+    margin-right: 2em;
+    position: relative;
+  }
+
+  .navbar__item::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: var(--border-radius);
+    background-color: var(--yellow);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform var(--transition-duration, 350ms) ease;
+  }
+  
+  .navbar__item:hover::after {
+    transform: scaleX(1);
+  }
+
+  .navbar__item + .navbar__item {
+    margin-top: 0em;
+  }
+
+  .navbar__item + .navbar__item::before {
+    content: none;
+    display: none;
+    visibility: hidden;
+  }
+
+  .navbar__link {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    position: relative;
+  }
+
+  .navbar__link::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: var(--yellow);
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(300%, -50%);
+    border-radius: 20em;
+  }
+
+  .navbar__item:last-child > .navbar__link::after {
+    content: none;
+  }
+
+  /* Home section */
+  .home {
+    --section-padding: 12em 0em;
+  }
+
+  .home__content {
+    padding: 2.4em 1em;
+  }
+
+  /* Services section */
+  .services__box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* How section */
+  .how__box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Work section */
+  .work__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+  }
+
+  /* Gallery section */
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Numbers section */
+  .numbers__box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* About section */
+  .about__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Team section */
+  .team__box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team__header {
+    height: 320px;
+  }
+
+  /* Skills section */
+  .skills__box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Skills section */
+  .clients__box {
+    justify-items: center;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .client__item > img {
+    width: 80%;
+  }
+
+  /* Contact section */
+  .contact__box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Message section */
+  .message > form > div:first-child {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Footer */
+  .footer {
+    padding: 1.4em 1em;
+  }
+}
+
+/* Responsive for Large Desktop */
+@media (min-width: 1440px) {
+  /* Home section */
+  .home {
+    --section-padding: 14em 0em;
+  }
+
+  .home__content {
+    padding: 3em 1em;
+  }
+
+  /* Gallery section */
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* Team section */
+  .team__box {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .team__header {
+    height: 250px;
+  }
+
+  /* Skills section */
+  .clients__box {
+    justify-items: center;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .client__item > img {
+    width: 80%;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 1.6em 1em;
+  }
 }
