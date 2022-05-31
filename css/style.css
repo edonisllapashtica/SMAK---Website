@@ -174,6 +174,25 @@ div[class$="item"] > p {
   margin-right: auto;
 }
 
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.bg-dark {
+  background-color: var(--dark-green);
+}
+
+.container > .message {
+  background-color: #ffffff;
+  color: var(--dark-green);
+}
+
+.container > .message p {
+  color: var(--grey);
+}
+
 /* Loader */
 .loader {
   width: 100vw;
@@ -949,7 +968,7 @@ div[class$="item"] > p {
 
   /* Navbar */
   .navbar {
-    padding: 1em 1em;
+    padding: 1em 2em;
     display: grid;
     align-items: center;
     justify-items: space-between;
@@ -1115,6 +1134,11 @@ div[class$="item"] > p {
 
 /* Responsive for Large Desktop */
 @media (min-width: 1440px) {
+  /* Navbar */
+  .navbar {
+    padding: 1em 4em;
+  }
+
   /* Home section */
   .home {
     --section-padding: 14em 0em;
@@ -1126,6 +1150,8 @@ div[class$="item"] > p {
 
   /* Gallery section */
   .gallery {
+    padding-left: 0;
+    padding-right: 0;
     grid-template-columns: repeat(6, 1fr);
   }
 
