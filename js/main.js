@@ -34,8 +34,8 @@ function scrollFunction() {
 }
 
 // Loader
-let loader = document.getElementById('loader');
+let loader = document.getElementById("loader");
 
-window.onload = function() {
-  loader.classList.add('active')
-}
+window.onload = function () {
+  loader.classList.add("active");
+};
