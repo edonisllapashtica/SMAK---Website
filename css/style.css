@@ -193,6 +193,13 @@ div[class$="item"] > p {
   color: var(--grey);
 }
 
+/* Stop ios by default input rounded corners */
+input,
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 /* Loader */
 .loader {
   width: 100vw;
